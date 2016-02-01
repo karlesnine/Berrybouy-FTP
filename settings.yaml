@@ -1,0 +1,32 @@
+---
+vagrant:
+  hostname: ftp
+  owner: you
+  user: johndoe
+  user_password: strongpassword
+  domain: .your.domain
+  motd: "---------- Server is ready ----------"
+vb:
+  vm_box: "ubuntu/trusty64"
+  vm_box_check_update: true
+  ssh_username: vagrant
+  mem: 2048
+  cpus: 4
+aws:
+  vm_box: dummy
+  vm.box_url: "https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box"
+  ssh_username: ubuntu
+  ssh_private_key_path: "/Users/you/.ssh/id_rsa"
+  s3_bucket: s3_bucket_name
+  aws_access_key_id: FAKEACCESSKEYYIPPEEKIYAY
+  aws_secret_access_key: SVProbespierrenREvient+nation1789
+  aws_keypair_name: you.id_rsa.pub
+  aws_instance_type: t2.micro
+  aws_monitoring: false
+  aws_elastic_ip: false
+  aws_associate_public_ip: false
+  aws_instance_ready_timeout: 240
+  aws_region: us-east-1
+  aws_region_ami: ami-0f8bce65
+  aws_security_groups: YourSG
+  route53_hosted_zone_id: FAKEHOSTEDZONEID
