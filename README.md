@@ -5,8 +5,28 @@
 
 Use [vagrant](https://www.vagrantup.com/) to create a FTP / SFTP server for a single user on one of the [smallest instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html) of [AWS](http://aws.amazon.com) and store your uploaded data directly on a [S3 bucket](https://aws.amazon.com/s3/?nc1=h_ls).
 
-## Dependency
 
+## Why Vagrant ?
+Vagrant provides easy way to configure, reproducible, and portable work environments and built a server
+
+## Why AWS S3 bucket ?
+Amazon S3 is reliable and accessible
+* Amazon S3 provides infrastructure “designed for durability of 99.999999999% of objects.”
+* Amazon S3 is built to provide “99.99% availability of objects over a given year.”
+* You pay for exactly what you need, with no minimum or up-front fees.
+* With Amazon S3, there’s no limit to how much data you can store or when you can access it.
+
+## Features
+* One setting file only
+* Optional run on virtualbox for debug or test
+* One ftp user only
+* Smallest AWS instance 
+* FTP or SFTP
+* Storage directly on S3
+* Serveur can be trashed or switch of after upload
+* Dowload from S3
+
+## Dependency
 * [vagrant](https://www.vagrantup.com/)
 	* optional [virtualbox](https://www.virtualbox.org/)
 * A [AWS](http://aws.amazon.com) account
@@ -14,8 +34,8 @@ Use [vagrant](https://www.vagrantup.com/) to create a FTP / SFTP server for a si
 	* A Amazon S3 bucket
 	* A Amazon Route53 DNS zone
 
-## Setting
 
+## Setting
 Complete `settings.yaml` file with your information :
 
 - **vagrant:** *information for vagrant*
@@ -49,4 +69,12 @@ Complete `settings.yaml` file with your information :
   - **aws_region_ami:** ami-0f8bce65 *Change with care*
   - **aws_security_groups:** Your Security Groupe name
   - **route53_hosted_zone_id:** your route 53 zone id
+
+  ## Quick start
+
+  - 1) `git clone` this project
+  - 2) Modify with your information the `settings.yml` file
+  - 3) `vagrant up`
+  - 4) upload your stuff
+  - 5) `vagrant destroy`
 
