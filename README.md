@@ -3,28 +3,28 @@
 
 **Single run for a simple FTP / SFTP server in AWS**
 
-Use [vagrant](https://www.vagrantup.com/) to create a FTP / SFTP server for a single user on one of the [smallest instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html) of [AWS](http://aws.amazon.com) and store your uploaded data directly on a [S3 bucket](https://aws.amazon.com/s3/?nc1=h_ls).
+Berrybouy FTP use [vagrant](https://www.vagrantup.com/) to create a FTP / SFTP server for a single user on one of the [smallest instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html) of [AWS](http://aws.amazon.com) and store your uploaded data directly on a [S3 bucket](https://aws.amazon.com/s3/?nc1=h_ls).
 
 
 ## Why Vagrant ?
 Vagrant provides easy way to configure, reproducible, and portable work environments and built a server
 
 ## Why AWS S3 bucket ?
-Amazon S3 is reliable and accessible
-* Amazon S3 provides infrastructure “designed for durability of 99.999999999% of objects.”
-* Amazon S3 is built to provide “99.99% availability of objects over a given year.”
+* Amazon S3 is reliable and accessible
+* Amazon S3 provides infrastructure *designed for durability of 99.999999999% of objects.*
+* Amazon S3 is built to provide *99.99% availability of objects over a given year.*
 * You pay for exactly what you need, with no minimum or up-front fees.
 * With Amazon S3, there’s no limit to how much data you can store or when you can access it.
 
 ## Features
 * One setting file only
-* Optional run on virtualbox for debug or test
 * One ftp user only
 * Smallest AWS instance 
 * FTP or SFTP
-* Storage directly on S3
-* Serveur can be trashed or switch of after upload
-* Dowload from S3
+* Storage directly on S3 bucket
+* Serveur can be trashed after upload
+* Dowload by http from S3 bucket
+* Optional run on virtualbox for debug or test
 
 ## Dependency
 * [vagrant](https://www.vagrantup.com/)
@@ -44,7 +44,7 @@ Complete `settings.yaml` file with your information :
   - **user:** the ftp user name account 
   - **user_password:** A strong password for the ftp user
   - **domain:** The domaine name of your route 53 zone
-  - **motd:** "---------- Server is ready ----------"
+  - **motd:** "message of the day"
 - **vb:** *information for virtualbox if needed* 
   - **vm_box:** "ubuntu/trusty64" *Change with care*
   - **vm_box_check_update:** true *Change with care*
