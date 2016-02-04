@@ -34,6 +34,10 @@ Vagrant provides easy way to configure, reproducible, and portable work environm
 	* A Amazon S3 bucket
 	* A Amazon Route53 DNS zone
 
+## A Aws Security Group
+* SSH TCP  22 0.0.0.0/0
+* Custom TCP Rule TCP  12000 - 12100 0.0.0.0/0
+* Custom TCP Rule   TCP 20 - 21 0.0.0.0/0
 
 ## Setting
 Complete `settings.yaml` file with your information :
